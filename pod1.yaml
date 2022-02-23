@@ -1,0 +1,13 @@
+apiVersion: v1           #version of api resource
+kind: Pod                #api resource
+metadata:        #information of the api-resource
+   name: declarative-pod-namespace
+   namespace: mynamespace
+   
+spec:                    # configuration/specification of api-resource
+   containers:
+           - name: demo-pod
+             image: nginx
+
+          
+
