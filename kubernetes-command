@@ -1,0 +1,45 @@
+34  kubectl get pods -o wide
+   35  curl 192.168.72.3:80
+   36  kubectl get pods -o yaml | grep image
+   37  exit
+   38  mkdir kubeernetes-day1
+   39  chmod -R 777 kubeernetes-day1/
+   40  cd kubeernetes-day1/
+   41  ls 
+   42  vi pod1.yaml
+   43  kubectl apply -f pod1.yaml 
+   44  vi pod1.yaml 
+   45  kubectl apply -f pod1.yaml 
+   46  vi pod1.yaml 
+   47  kubectl apply -f pod1.yaml 
+   48  vi pod1.yaml 
+   49  kubectl apply -f pod1.yaml 
+   50  kubectl get pods
+   51  kubectl get pods -o wide
+   52  kubectl describe pod declarative-pod
+   53  cd ..
+   54  ls
+   55  kubectl create namespace mynamespace
+   56  cd kubeernetes-day1/
+   57  ls
+   58  vi pod1.yaml 
+   59  kubectl get namespaces
+   60  kubectl apply -f pod1.yaml 
+   61  kubectl get pods
+   62  kubectl get pods -n mynamespace
+   63  kubectl get pods
+   64  kubectl label pod firstpod type=dev
+   65  kubectl label pod httpd type=qa
+   66  kubectl label pod firstpod app=myapp
+   67  kubectl get pods --show-labels
+   68  kuneclt get pods -l app=myapp
+   69  kunectl get pods -l app=myapp
+   70  kubectl pods -l app=myapp
+   71  kubectl pod -l app=myapp
+   72  kubectl get pod -l app=myapp
+   73  kubectl label nodes master type=production location=india
+   74  kubectl get nodes
+   75  kubectl label node ip-172-31-28-195 environment=dev location=russia
+   76  kubectl label node ip-172-31-27-237  environment=qa location=india
+   77  kubectl get nodes --show-labels
+   78  kubectl get nodes -l location=india
