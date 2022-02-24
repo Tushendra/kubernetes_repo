@@ -98,3 +98,12 @@ day-2
   226  kubectl apply -f taint-pod.yaml 
   227  kubectl get pods
   228  kubectl get pods -o wide
+ 247  kubectl describe pods multi-container 
+  248  kubectl get logs multi-container
+  249  kubectl logs multi-container
+  250  kubectl logs multi-container tomcat
+  251  kubectl logs multi-container multi-container-bitnami
+  252  kubectl delete -f multi-container-pod.yaml 
+  253  vi multi-container-pod.yaml 
+  254  kubectl apply -f multi-container-pod.yaml 
+  255  kubectl get pods

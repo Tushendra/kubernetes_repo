@@ -1,0 +1,17 @@
+apiVersion: v1           #version of api resource
+kind: Pod                #api resource
+metadata:        #information of the api-resource
+   name: multi-container
+spec:                    # configuration/specification of api-resource
+   containers:
+           - name: multi-container
+             image: nginx
+             ports:
+                - containerPort: 80
+           - name: multi-container-bitnami
+             image: tomcat
+             ports:
+               - containerPort: 8080
+
+          
+
