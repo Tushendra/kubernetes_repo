@@ -1,0 +1,16 @@
+apiVersion: v1           #version of api resource
+kind: Pod                #api resource
+metadata:        #information of the api-resource
+   name: node-selector-pod
+   
+spec:         # configuration/specification of api-resource
+   nodeSelector:
+           location: india
+   containers:
+           - name: demo-pod
+             image: nginx
+             ports:
+                - containerPort: 80
+
+          
+

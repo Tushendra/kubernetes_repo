@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+      name: affinity-pod
+spec:
+   containers:
+       - image: nginx
+         name: pod-nodeaffinity
+         ports:
+            - containerPort: 80
+   affinity:
+        nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+                    nodeSelectorTerms:
+                        - matchExpressions:
+                            - key: location
+                              operator: In
+                              values:
+                                 - india
+                                 - russia
+            preferredDuringSchedulingIgnoredDuringExecution:
+                - weight: 1
+                  preference:
+                        matchExpressions:
+                             - key: distype
+                               operator: In
+                               values:
+                                  - ssd
+
+
