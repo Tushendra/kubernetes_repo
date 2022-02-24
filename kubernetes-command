@@ -43,3 +43,58 @@
    76  kubectl label node ip-172-31-27-237  environment=qa location=india
    77  kubectl get nodes --show-labels
    78  kubectl get nodes -l location=india
+
+day-2
+
+177  cp pod1.yaml node-selector-pod.yaml
+  178  ls
+  179  vi node-selector-pod.yaml 
+  180  kubectl get nodes --show-labels
+  181  vi node-selector-pod.yaml 
+  182  cat node-selector-pod.yaml 
+  183  vi node-selector-pod.yaml 
+  184  kubectl apply -f node-selector-pod.yaml 
+  185  vi node-selector-pod.yaml 
+  186  kubectl apply -f node-selector-pod.yaml 
+  187  kubectl get nodes
+  188  kubectl get pods
+  189  kubectl get pods -o wide
+  190  kubectl delete pod node-selector-pod
+  191  kubectl get pods
+  192  kubectl apply -f node-selector-pod.yaml 
+  193  kubectl get pods
+  194  kubectl get pods -o wide
+  195  kubectl get nodes --show-labels
+  196  ls
+  197  vi node-affinity-pod.yaml
+  198  vi node-affinity-pod.yaml 
+  199  kubectl apply -f node-affinity-pod.yaml 
+  200  cat node-affinity-pod.yaml | wc -l
+  201  cat node-affinity-pod.yaml 
+  202  vi node-affinity-pod.yaml 
+  203  cat node-affinity-pod.yaml 
+  204  vi node-affinity-pod.yaml 
+  205  kubectl apply -f node-affinity-pod.yaml 
+  206  vi node-affinity-pod.yaml 
+  207  kubectl apply -f node-affinity-pod.yaml 
+  208  vi node-affinity-pod.yaml 
+  209  kubectl apply -f node-affinity-pod.yaml 
+  210  kubectl get pods
+  211  kubectl get pods -o wide
+  212  ls 
+  213  rm -rf 1
+  214  ls
+  215  git status
+  216  git add .
+  217  git commit "kubernetes-day-2"
+  218  git commit -m "kubernetes-day-2-yamls"
+  219  git status
+  220  git push -u origin main
+  221  kubectl get nodes
+  222  kubectl taint node ip-172-31-28-195 type=gpu:NoSchedule
+  223  ls
+  224  cp pod1.yaml taint-pod.yaml
+  225  vi taint-pod.yaml 
+  226  kubectl apply -f taint-pod.yaml 
+  227  kubectl get pods
+  228  kubectl get pods -o wide
