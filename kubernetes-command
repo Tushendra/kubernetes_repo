@@ -107,3 +107,121 @@ day-2
   253  vi multi-container-pod.yaml 
   254  kubectl apply -f multi-container-pod.yaml 
   255  kubectl get pods
+day-3
+
+267  cat multi-container-pod.yaml 
+  268  kubectl logs -f multi-container multi-container
+  269  cd kubernetes-demo/
+  270  ls
+  271  vi mysql-pod.yaml
+  272  kubectl apply -f mysql-pod.yaml 
+  273  kubectl get pos
+  274  kubectl get pods
+  275  kubectl get pods -o wide
+  276  kubectl describe mysql-pod
+  277  kubectl describe pod mysql-pod
+  278  kubectl get pods -o wide
+  279  ls
+  280  vi mysql-pod.yaml 
+  281  kubectl delete -f mysql-pod.yaml 
+  282  kubectl apply -f mysql-pod.yaml 
+  283  kubectl get pods
+  284  kubectl delete -f mysql-pod.yaml 
+  285  vi mysql-pod.yaml 
+  286  kubectl apply -f mysql-pod.yaml 
+  287  kubectl get pods
+  288  kubectl logs pod mysql-pod
+  289  kubectl logs mysql-pod
+  290  vi mysql-pod.yaml 
+  291  kubectl delete -f mysql-pod.yaml 
+  292  kubectl apply -f mysql-pod.yaml 
+  293  kubectl get pods -o wide
+  294  apt-get update
+  295  apt install mysql-client
+  296  kubectl get pods
+  297  cat mysql-pod.yaml 
+  298  kubectl get pods -o wide
+  299  mysql -u dbuser -p -h 192.168.124.222
+  300  clear
+  301  vi pod2-httpd.yaml
+  302  kubectl apply -f pod2-httpd.yaml 
+  303  vi pod2-httpd.yaml 
+  304  ls
+  305  clear
+  306  cd kubernetes-demo/
+  307  vi resource-limit-pod.yaml
+  308  kubectl apply -f resource-limit-pod.yaml 
+  309  kubectl get pods
+  310  kubectl describe pod resource-limit
+  311  clear
+  312  cd kubernetes-demo/
+  313  mkdir controllers
+  314  cd controllers/
+  315  ls
+  316  vi replica-set.yaml
+  317  kubectl apply -f replica-set.yaml 
+  318  kubectl get replicaset
+  319  kubectl get replicaset -o wide
+  320  kubectl describe replicaset
+  321  kubectl delete pod replicaset-pod-fjg2b
+  322  kubectl get replicaset -o wide
+  323  kubectl describe replicaset
+  324  kubectl get pods -o wide
+  325  vi replica-set.yaml 
+  326  kubectl apply -f replica-set.yaml 
+  327  kubectl get pods -o wide
+  328  kubectl scale replicaset replicaset-pod --replicas=5
+338  kubectl apply -f deployment-pod.yaml 
+  339  kubectl get deployment
+  340  kubectl get deployment -o wide
+  341  kubectl describe deployment my-dep
+  342  kubectl get deployment -o wide
+  343  kubectl describe deployment my-dep
+  344  kubectl get pod
+  345  vi deployment-pod.yaml 
+  346  kubectl delete -f deployment-pod.yaml 
+  347  kubectl get deployment
+  348  kubectl apply -f deployment-pod.yaml 
+  349  kubectl get deployment -o wide
+  350  kubectl set image deployment my-dep nginx=1.20 --record
+  351  kubectl set image deployment my-dep nginx=nginx:1.20 --record
+  352  kubectl set image deployment my-dep nginx:1.19=nginx:1.20 --record
+  353  vi deployment-pod.yaml 
+  354  kubectl get pods
+  355  kubectl get pod -w
+  356  kubectl set image deployment my-dep nginx=nginx:1.21 --record
+  357  kubectl delete -f deployment-pod.yaml 
+  358  kubectl apply -f deployment-pod.yaml 
+  359  kubectl get deployment
+  360  kubectl set image deployment my-dep nginx=nginx:1.21 --record
+  361  kubectl get pod -w
+  362  kubectl get deployment
+  363  kubectl get pods
+  364  kubectl set image deployment my-dep nginx=nginx:1.20 --record
+  365  kubectl get pod -w
+  366  kubectl get pods
+  367  kubectl get rs
+  368  kubectl rollout history deployment my-dep
+  369  kubectl describe deployment my-dep
+  370  kubectl rollout undo deployment my-dep
+  371  kubectl get pod -w
+  372  kubectl rollout history deployment my-dep
+  373  kubectl describe deployment my-dep
+  374  kubectl rollout undo deployment my-dep --to-revision 1
+  375  kubectl rollout history deployment my-dep
+  376  kubectl describe deployment my-dep
+ 385  kubectl get daemonset -o wide
+  386  kubectl get ds -o wide
+  387  kubectl get pods 
+  388  kubectl get pods -o wide
+  389  kubectl get deployment
+  390  kubectl expose deployment my-dep --name my-svc --port 80
+  391  kubectl get svc
+  392  curl 10.100.82.88
+  393  clear
+  394  kubectl expose deployment my-dep --name my-nodeport --port 80 --type NodePort
+  395  kubectl get svc
+  396  kubectl get nodes
+  397  kubectl get nodes -o wide
+  398  kubectl expose deployment my-dep --name lb-svc --port 80 --type LoadBalancer
+  399  kubectl get svc

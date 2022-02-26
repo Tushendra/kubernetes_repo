@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+      name: sql-httpd-pod
+spec:
+     containers:
+           env:
+              - name: NAME
+                value: Amitabh Bacchan
+              - name: Location
+                value: india
+           name: sql-https-pod
+           image: httpd
