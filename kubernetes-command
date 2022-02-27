@@ -225,3 +225,119 @@ day-3
   397  kubectl get nodes -o wide
   398  kubectl expose deployment my-dep --name lb-svc --port 80 --type LoadBalancer
   399  kubectl get svc
+
+day-4
+
+409  chmod -R 777 job/b
+  410  chmod -R 777 job/
+  411  cd job/
+  412  vi job.yaml
+  413  kubectl apply -f job.yaml 
+  414  vi job.yaml 
+  415  kubectl apply -f job.yaml 
+  416  vi job.yaml 
+  417  kubectl apply -f job.yaml 
+  418  kubectl get pod
+  419  kubectl get job
+  420  kubectl delete -f job.yaml 
+  421  vi job.yaml 
+  422  kubectl apply -f job.yaml 
+  423  kubectl get pods
+  424  kubectl get pods -w
+  425  kubectl log print-hello-fmt28
+  426  kubectl logs print-hello-fmt28
+  427  vi cron-job.yaml
+  428  cd kube
+  429  vi cron-job.yaml
+  430  cd kubernetes-demo/
+  431  ls
+  432  cd controllers/
+  433  ls
+  434  cd ..
+  435  vi packets.cnf
+  436  k
+  437  cd kubernetes-demo/
+  438  ls
+  439  mkdir storage-yaml
+  440  chmod -R 777 storage-yaml/
+  441  ls
+  442  cd storage-yaml/
+  443  vi storage-yaml.pod
+  444  vi storage-pod.yaml
+  445  kubectl apply -f storage-pod.yaml 
+  446  vi storage-pod.yaml 
+  447  kubectl apply -f storage-pod.yaml 
+  448  vi storage-pod.yaml 
+  449  kubectl apply -f storage-pod.yaml 
+  450  kubectl get storage
+  451  kubectl get pods
+  452  kubectl logs storage-pod
+  453  kubectl logs pod storage-pod
+  454  vi storage-pod.yaml 
+  455  kubectl delete -f storage-pod.yaml 
+  456  kubectl apply -f storage-pod.yaml 
+  457  kubectl get pods
+  458  kubectl exec storage-pod -- cat /opt/number.out
+  459  kubectl get pods -o wide
+  460  kubectl delete -f storage-pod.yaml 
+  461  kubectl apply -f storage-pod.yaml 
+  462  kubectl get pods -o wide
+  463  cat storage-pod.yaml 
+  464  l
+  465  ls
+  466  vi indix.html
+  467  kubectl create cm customwebpage
+  468  kubectl describe cm customewebpage
+  469  kubectl delete cm customewebpage
+  470  kubectl create cm customwebpage --from-file index.html
+  471  ls
+  472  kubectl create cm customwebpage --from-file indi~x.html
+  473  kubectl create cm customwebpage --from-file indix.html
+  474  kubectl delete cm customwebpage
+  475  kubectl create cm customwebpage --from-file indix.html
+  476  kubectl describe cm customwebpage
+  477  vi configmap-mount.yaml
+  478  kubectl apply -f configmap-mount.yaml 
+  479  kubectl get pods -o wide
+  480  kubectl delete configmap-mount.yaml 
+  481  kubectl delete -f configmap-mount.yaml 
+  482  vi configmap-mount.yaml 
+  483  kubectl apply -f configmap-mount.yaml 
+  484  kubectl get pods -o wide
+  485  curl 192.168.72.29
+  486  kubectl delete cm customwebpage
+  487  mv indix.html index.html
+  488  kubectl delete -f configmap-mount.yaml 
+  489  kubectl create cm customwebpage
+  490  vi configmap-mount.yaml 
+  491  kubectl apply -f configmap-mount.yaml 
+  492  kubectl get pods -o wide
+  493  ls
+  494  kubectl describe cm customwebpage
+  495  cat index.html 
+  496  kubectl delete cm customwebpage
+  497  kubectl create cm customwebpage --from-file index.html
+  498  kubectl delete -f configmap-mount.yaml 
+  499  kubectl apply -f configmap-mount.yaml 
+  500  kubectl get pods -o wide
+  501  curl 192.168.72.16
+  502  ls 
+  503  cd kubernetes-demo/
+  504  ls
+  505  mkdir persistent-columes
+  506  mv persistent-columes/ persistent-volumes
+  507  cd persistent-volumes/
+  508  ls
+  509  vi pv-storage.yaml
+  510  vi claim-pv-storage.yaml
+  511  vi mounts-pvc-storage.yaml
+  512  kubectl apply -f pv-storage.yaml 
+  513  kubectl apply -f claim-pv-storage.yaml 
+  514  kubectl apply -f mounts-pvc-storage.yaml 
+  515  kubectl get pv
+  516  kubectl get pv -o wide
+  517  kubectl get pvc -o wide
+  518  kubectl get pods
+  519  kubectl get pods -o wide
+  520  curl 192.168.124.215
+
