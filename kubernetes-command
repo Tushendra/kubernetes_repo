@@ -340,4 +340,199 @@ day-4
   518  kubectl get pods
   519  kubectl get pods -o wide
   520  curl 192.168.124.215
+day -5 
 
+412  vi job.yaml
+  413  kubectl apply -f job.yaml 
+  414  vi job.yaml 
+  415  kubectl apply -f job.yaml 
+  416  vi job.yaml 
+  417  kubectl apply -f job.yaml 
+  418  kubectl get pod
+  419  kubectl get job
+  420  kubectl delete -f job.yaml 
+  421  vi job.yaml 
+  422  kubectl apply -f job.yaml 
+  423  kubectl get pods
+  424  kubectl get pods -w
+  425  kubectl log print-hello-fmt28
+  426  kubectl logs print-hello-fmt28
+  427  vi cron-job.yaml
+  428  cd kube
+  429  vi cron-job.yaml
+  430  cd kubernetes-demo/
+  431  ls
+  432  cd controllers/
+  433  ls
+  434  cd ..
+  435  vi packets.cnf
+  436  k
+  437  cd kubernetes-demo/
+  438  ls
+  439  mkdir storage-yaml
+  440  chmod -R 777 storage-yaml/
+  441  ls
+  442  cd storage-yaml/
+  443  vi storage-yaml.pod
+  444  vi storage-pod.yaml
+  445  kubectl apply -f storage-pod.yaml 
+  446  vi storage-pod.yaml 
+  447  kubectl apply -f storage-pod.yaml 
+  448  vi storage-pod.yaml 
+  449  kubectl apply -f storage-pod.yaml 
+  450  kubectl get storage
+  451  kubectl get pods
+  452  kubectl logs storage-pod
+  453  kubectl logs pod storage-pod
+  454  vi storage-pod.yaml 
+  455  kubectl delete -f storage-pod.yaml 
+  456  kubectl apply -f storage-pod.yaml 
+  457  kubectl get pods
+  458  kubectl exec storage-pod -- cat /opt/number.out
+  459  kubectl get pods -o wide
+  460  kubectl delete -f storage-pod.yaml 
+  461  kubectl apply -f storage-pod.yaml 
+  462  kubectl get pods -o wide
+  463  cat storage-pod.yaml 
+  464  l
+  465  ls
+  466  vi indix.html
+  467  kubectl create cm customwebpage
+  468  kubectl describe cm customewebpage
+  469  kubectl delete cm customewebpage
+  470  kubectl create cm customwebpage --from-file index.html
+  471  ls
+  472  kubectl create cm customwebpage --from-file indi~x.html
+  473  kubectl create cm customwebpage --from-file indix.html
+  474  kubectl delete cm customwebpage
+  475  kubectl create cm customwebpage --from-file indix.html
+  476  kubectl describe cm customwebpage
+  477  vi configmap-mount.yaml
+  478  kubectl apply -f configmap-mount.yaml 
+  479  kubectl get pods -o wide
+  480  kubectl delete configmap-mount.yaml 
+  481  kubectl delete -f configmap-mount.yaml 
+  482  vi configmap-mount.yaml 
+  483  kubectl apply -f configmap-mount.yaml 
+  484  kubectl get pods -o wide
+  485  curl 192.168.72.29
+  486  kubectl delete cm customwebpage
+  487  mv indix.html index.html
+  488  kubectl delete -f configmap-mount.yaml 
+  489  kubectl create cm customwebpage
+  490  vi configmap-mount.yaml 
+  491  kubectl apply -f configmap-mount.yaml 
+  492  kubectl get pods -o wide
+  493  ls
+  494  kubectl describe cm customwebpage
+  495  cat index.html 
+  496  kubectl delete cm customwebpage
+  497  kubectl create cm customwebpage --from-file index.html
+  498  kubectl delete -f configmap-mount.yaml 
+  499  kubectl apply -f configmap-mount.yaml 
+  500  kubectl get pods -o wide
+  501  curl 192.168.72.16
+  502  ls 
+  503  cd kubernetes-demo/
+  504  ls
+  505  mkdir persistent-columes
+  506  mv persistent-columes/ persistent-volumes
+  507  cd persistent-volumes/
+  508  ls
+  509  vi pv-storage.yaml
+  510  vi claim-pv-storage.yaml
+  511  vi mounts-pvc-storage.yaml
+  512  kubectl apply -f pv-storage.yaml 
+  513  kubectl apply -f claim-pv-storage.yaml 
+  514  kubectl apply -f mounts-pvc-storage.yaml 
+  515  kubectl get pv
+  516  kubectl get pv -o wide
+  517  kubectl get pvc -o wide
+  518  kubectl get pods
+  519  kubectl get pods -o wide
+  520  curl 192.168.124.215
+  521  history 
+  522  cd ../
+  523  vi kubernetes-command 
+  524  git status
+  525  git add .
+  526  git commit -m "added day-4 kubernetes docs and yamls"
+  527  git push -u
+  528  exit
+  529  kubectl get decret
+  530  kubectl getsdecret
+  531  kubectl get secret
+  532  kubectl create secret generic dbsecret --from-literal MYSQL_ROOT_PASSWORD=rootpassword --from-literal MYSQL_DATABASE=cka --from-literal MYSQL_USER=user --from-literal MYSQL_PASSWORD=password
+  533  kubectl get secrets
+  534  kubectl describe dbsecret
+  535  kubectl describe secret dbsecret
+  536  ls
+  537  cd kube
+  538  cd kubernetes-demo/
+  539  ls
+  540  vi secret-pod.yaml
+  541  kubectl apply -f secret-pod.yaml 
+  542  kubectl get pod -o wide
+  543  cat secret-pod.yaml 
+  544  ls
+  545  kubectl get pod -o wide
+  546  kubectl describe pod mysql
+  547  cat secret-pod.yaml 
+  548  ls 
+  549  cd ..
+  550  kubectl delete -f kubernetes-demo/
+  551  kubectl delete -R -f kubernetes-demo/
+  552  kubectl get pdos
+  553  kubectl get pods
+  554  cd kubernetes-demo/
+  555  ls
+  556  mkdir ingress
+  557  chmod -R 777 ingress
+  558  kubectl delete all --all
+  559  ls
+  560  kubectl apply -f kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.1/deploy/static/provider/cloud/deploy.yaml
+  561  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.1/deploy/static/provider/cloud/deploy.yaml
+  562  kubectl get pods -n ingress-nginx
+  563  kubectl get pods 
+  564  kubectl get pods -n ingress
+  565  kubectl get pods -n ingress-nginx
+  566  kubectl get svc -n ingress-nginx
+  567  cd kubernetes-demo/
+  568  ls
+  569  cd ingress
+  570  ls
+  571  vi cart-nginx.ymal
+  572  vi cart-nginx.yaml
+  573  vi accounts-https.yaml
+  574  vi orders-tomcat.yaml
+  575  kubectl apply -f cart-nginx.yaml 
+  576  kubectl apply -f accounts-https.yaml 
+  577  kubectl apply -f orders-tomcat.yaml 
+  578  kubectl get pids
+  579  kubectl get pods -o wide
+  580  kubectl expose deployment dep1 --name cart --port 80
+  581  kubectl expose deployment dep2 --name accounts --port 80
+  582  kubectl expose deployment dep3 --name orders --port 80 --target-port 8080
+  583  vi ingress-pod.yaml
+  584  kubectl apply -f ingress-pod.yaml 
+  585  kubectl get ingress
+  586  kubectl get ingress -o wide
+  587  kubectl get nodes -o wide
+  588  kubectl get svc
+  589  kubectl get svc 
+  590  kubectl get svc -n ingress-nginx
+  591  kubectl get pod -o wide
+  592  kubectl get pod -n ingress-nginx
+  593  kubectl get pod -n ingress-nginx -o wide
+  594  cat ingress-pod.yaml 
+  595  [6~
+  596  kubectl get pod -n ingress-nginx -o wide
+  597  kubectl get svc -n ingress-nginx
+  598  kubectl get nodes -o wide
+  599  kubectl get pod -o wide
+  600  cat ingress-pod.yaml 
+  601  cat cart-nginx.yaml 
+  602  kubectl get pods -n ingress-nginx
+  603  kubectl describe ingress ingress-nginx-controller-8dd6dc574-dvkmt
+  604  kubectl get ingress
+  605  kubectl describe ingress ingress-demo
