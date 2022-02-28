@@ -536,3 +536,60 @@ day -5
   603  kubectl describe ingress ingress-nginx-controller-8dd6dc574-dvkmt
   604  kubectl get ingress
   605  kubectl describe ingress ingress-demo
+monitoring-kubernetes-metrics;
+ 614  kubectl get pods
+  615  kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+  616  kubectl get pod -n kube-system
+  617  kubectl get deployment -n kube-system
+  618  kubectl edit -n kube-system deployment metrics-server
+  619  kubectl get deployment -n kube-system
+  620  kubectl delete pod metric-server
+  621  kubectl delete deployment metric-server
+  622  kubectl delete deployment.apps -n kube-system metric-server
+  623  kubectl delete deployment.apps  metric-server
+  624  kubectl get pods -n kube-system
+  625  kubectl delete pod -n kube-system metrics-server-7d4f4d458f-ht4sw
+  626  kubectl get deployment -n kube-system
+  627  kubectl top
+  628  kubectl top pods
+  629  kubectl top nodes
+
+613  kubectl apply -f .
+  614  kubectl get pods
+  615  kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+  616  kubectl get pod -n kube-system
+  617  kubectl get deployment -n kube-system
+  618  kubectl edit -n kube-system deployment metrics-server
+  619  kubectl get deployment -n kube-system
+  620  kubectl delete pod metric-server
+  621  kubectl delete deployment metric-server
+  622  kubectl delete deployment.apps -n kube-system metric-server
+  623  kubectl delete deployment.apps  metric-server
+  624  kubectl get pods -n kube-system
+  625  kubectl delete pod -n kube-system metrics-server-7d4f4d458f-ht4sw
+  626  kubectl get deployment -n kube-system
+  627  kubectl top
+  628  kubectl top pods
+  629  kubectl top nodes
+  630  history
+  631  vi kubernetes-command 
+  632  ls
+  633  mkdir autoscale
+  634  chmod -R 777 autoscale/
+  635  cd autoscale/
+  636  vi autoscale-pod.yaml
+  637  kubectl apply -f autoscale-pod.yaml 
+  638  cat autoscale-pod.yaml 
+  639  ls
+  640  kubectl expose deployment autoscale-dep --name autoscale-svc --port 80
+  641  kubectl get svc autoscale-svc
+  642  kubectl autoscale deployment autoscale-dep --min 3 --max 8 --cpu-percent 60
+  643  kubectl get hpa
+  644  apt update
+  645  apt-get install apache2-utils
+  646  kubectl get svc
+  647  ab -n 5000000 -c 1000 http://10.98.16.156:80/
+  648  kubectl get pdos
+  649  kubectl get pods
+  650  kubectl get pods -o wide
+  651  watch kubectl top pods -l app=autoscale-dep
